@@ -332,11 +332,23 @@
     }
     .project-links { display: flex; gap: 1rem; }
     .project-link {
-      display: inline-flex; align-items: center; gap: 0.4rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
       color: var(--text-muted); font-size: 0.85rem; text-decoration: none;
-      transition: color 0.2s;
+      transition: all 0.25s;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(168,85,247,0.05);
+      cursor: pointer;
     }
-    .project-link:hover { color: var(--purple); }
+    .project-link svg { width: 16px; height: 16px; }
+    .project-link:hover {
+      color: var(--purple-light);
+      border-color: var(--purple);
+      background: rgba(168,85,247,0.15);
+      box-shadow: 0 0 12px rgba(168,85,247,0.25);
+      transform: translateY(-2px);
+    }
 
     /* ── CONTACT ── */
     #contact {
@@ -439,7 +451,10 @@
       background: linear-gradient(135deg, rgba(168,85,247,0.04) 0%, rgba(34,211,238,0.04) 100%);
       opacity: 0; border-radius: 16px;
       transition: opacity 0.4s;
+      pointer-events: none;
+      z-index: 0;
     }
+    .project-card > * { position: relative; z-index: 1; }
     .project-card:hover::after { opacity: 1; }
 
     /* ── COUNTER ANIMATION ── */
